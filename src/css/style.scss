@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap');
+$dark-blue: hsl(209, 23%, 22%); //(Dark Mode Elements): 
+$very-dark-blue: hsl(207, 26%, 17%); //(Dark Mode Background): 
+$very-dark-blue:  hsl(200, 15%, 8%); //(Light Mode Text):
+$dark-grey:hsl(0, 0%, 52%); //(Light Mode Input): 
+$very-light-grey: hsl(0, 0%, 98%); //(Light Mode Background): 
+$white: hsl(0, 0%, 100%); // (Dark Mode Text & Light Mode Elements): 
+*{
+  margin:0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Nunito Sans', sans-serif;
+}
+html{
+  font-size: 10px;
+}
+.container{
+  display: grid;
+  padding: 8rem;
+  gap: 2rem
+}
+.countries{
+  background: $very-light-grey;
+  display: grid;
+  gap: 8rem;
+  .country-card{
+    display: grid;
+    background: $white;
+    border-radius: 1rem;
+    box-shadow: 0px 4px 100px 8px rgba(0, 0, 0, 0.05);
+    .country-flag{
+      width: 100%;
+      img{
+        border-radius: 1rem 1rem 0rem 0rem;
+        width: 100%;
+      }
+    }
+    .country-data{
+      display: grid;
+      padding: 2rem;
+      gap: 1rem;
+      
+      h2{
+        font-size: 3rem;
+        padding-bottom: 1rem;
+      }
+      p{
+        font-size: 1.6rem;
+        span{
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}
+@media(min-width: 786px){
+  .countries{
+    grid-template-columns: repeat(2, 1fr)
+  }
+}
+@media(min-width: 991px){
+  .countries{
+    grid-template-columns: repeat(3, 1fr)
+  }
+}
+@media(min-width: 1200px){
+  .countries{
+    grid-template-columns: repeat(4, 1fr)
+  }
+}

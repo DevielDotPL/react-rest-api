@@ -1,0 +1,67 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Nunito Sans", sans-serif;
+}
+
+html {
+  font-size: 10px;
+}
+
+.container {
+  display: grid;
+  padding: 8rem;
+  gap: 2rem;
+}
+
+.countries {
+  background: hsl(0deg, 0%, 98%);
+  display: grid;
+  gap: 8rem;
+}
+.countries .country-card {
+  display: grid;
+  background: hsl(0deg, 0%, 100%);
+  border-radius: 1rem;
+  box-shadow: 0px 4px 100px 8px rgba(0, 0, 0, 0.05);
+}
+.countries .country-card .country-flag {
+  width: 100%;
+}
+.countries .country-card .country-flag img {
+  border-radius: 1rem 1rem 0rem 0rem;
+  width: 100%;
+}
+.countries .country-card .country-data {
+  display: grid;
+  padding: 2rem;
+  gap: 1rem;
+}
+.countries .country-card .country-data h2 {
+  font-size: 3rem;
+  padding-bottom: 1rem;
+}
+.countries .country-card .country-data p {
+  font-size: 1.6rem;
+}
+.countries .country-card .country-data p span {
+  font-weight: bold;
+}
+
+@media (min-width: 786px) {
+  .countries {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 991px) {
+  .countries {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (min-width: 1200px) {
+  .countries {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}/*# sourceMappingURL=style.css.map */
