@@ -1,33 +1,96 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap');
-$dark-blue: hsl(209, 23%, 22%); //(Dark Mode Elements): 
-$very-dark-blue: hsl(207, 26%, 17%); //(Dark Mode Background): 
-$very-dark-blue:  hsl(200, 15%, 8%); //(Light Mode Text):
-$dark-grey:hsl(0, 0%, 52%); //(Light Mode Input): 
-$very-light-grey: hsl(0, 0%, 98%); //(Light Mode Background): 
-$white: hsl(0, 0%, 100%); // (Dark Mode Text & Light Mode Elements): 
+
+
+.light-mode{
+  --elements: white;
+  --background: hsl(0, 0%, 98%);
+  --text: hsl(200, 15%, 8%);
+}
+.dark-mode{
+  --elements: hsl(209, 23%, 22%);
+  --background: hsl(207, 26%, 17%);
+  --text: hsl(0, 0%, 100%)
+}
 *{
   margin:0;
   padding: 0;
   box-sizing: border-box;
   font-family: 'Nunito Sans', sans-serif;
 }
+.form{
+  display: flex;
+  gap: 2rem;
+  input,select{
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.05);
+    font-size: 1.6rem;
+    padding: 1rem;
+    border:0;
+    background: var(--elements);
+    color: var(--text);
+    &::placeholder{
+      color: var(--text);
+    }
+  }
+}
 html{
   font-size: 10px;
+}
+header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.05);
+  font-size: 1.6rem;
+  padding: 2rem;
+  background: var(--elements);
+  color: var(--text);
+  button{
+    background: transparent;
+    color: var(--text);
+    border: 0;
+    font-size: 1.6rem;
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    cursor: pointer;
+    img{
+      width: 2rem;
+      height: 2rem;
+    }
+  }
+}
+.loading{
+  min-height: 91vh;
+  background: var(--background);
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  p{
+    font-size: 10rem;
+    text-transform: uppercase;
+  }
 }
 .container{
   display: grid;
   padding: 8rem;
+  padding-top: 2rem;
+  align-items: flex-start;
+  min-height: 91vh;
+  background: var(--background);
   gap: 2rem
 }
 .countries{
-  background: $very-light-grey;
+  background: var(--background);
   display: grid;
   gap: 8rem;
   .country-card{
     display: grid;
-    background: $white;
+    background: var(--elements);
     border-radius: 1rem;
     box-shadow: 0px 4px 100px 8px rgba(0, 0, 0, 0.05);
+    text-decoration: none;
+    color: var(--text);
     .country-flag{
       width: 100%;
       img{
@@ -51,6 +114,71 @@ html{
         }
       }
     }
+    transition: transform 0.3s;
+    &:hover{
+      transform: scale(1.03);
+    }
+  }
+}
+.countries-detail{
+  display: grid;
+  background: var(--background);
+  min-height: 91vh;
+  align-items: flex-start;
+  align-content: flex-start;
+  .back{
+    padding: 5rem;
+    button{
+      box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.05);
+      font-size: 1.6rem;
+      padding: 1rem 5rem;
+      border:0;
+      background: var(--elements);
+      color: var(--text);
+      cursor: pointer;
+    }
+  }
+  .country{
+    display: grid;
+    gap: 2rem;
+    padding: 5rem;
+    color: var(--text);
+    .country-flag{
+      display: grid;
+      width: 100%;
+      img{
+        // aspect-ratio: 16 / 9;
+        max-height: 40rem;
+        width: 100%;
+      }
+    }
+    .country-data{
+      display: grid;
+      padding: 2rem;
+      gap: 1rem;
+      
+      h2{
+        font-size: 3rem;
+        padding-bottom: 1rem;
+      }
+      p{
+        font-size: 1.6rem;
+        span{
+          font-weight: bold;
+        }
+      }
+    }
+    .border-countries{
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      .b-country{
+        background: var(--elements);
+        box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.05);
+        font-size: 1.6rem;
+        padding: 1rem;
+      }
+    }
   }
 }
 @media(min-width: 786px){
@@ -66,5 +194,27 @@ html{
 @media(min-width: 1200px){
   .countries{
     grid-template-columns: repeat(4, 1fr)
+  }
+  .countries-detail{
+    .country{
+      align-content: center;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      grid-template-areas: 
+      "flag flag info1 info2"
+      "flag flag border border";
+      align-items: center;
+      .country-flag{
+        grid-area: flag;
+      }
+      .country-data:nth-child(2){
+        grid-area: info1;
+      }
+      .country-data:nth-child(3){
+        grid-area: info2;
+      }
+      .country-data:nth-child(1){
+        grid-area: border;
+      }
+    }
   }
 }
