@@ -19,7 +19,7 @@ export const App = () => {
   }
 
   return(
-    <div className={darkMode ? "dark-mode" : "light-modeee"}>
+    <div className={darkMode ? "dark-mode" : "light-mode"}>
       <Header darkModeFn={DarkMode} darkMode={darkMode}/>
       <BrowserRouter>
         <Routes>
