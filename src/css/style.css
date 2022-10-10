@@ -18,30 +18,21 @@
   font-family: "Nunito Sans", sans-serif;
 }
 
-.form {
-  display: flex;
-  gap: 2rem;
-}
-.form input, .form select {
-  box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.05);
-  font-size: 1.6rem;
-  padding: 1rem;
-  border: 0;
-  background: var(--elements);
-  color: var(--text);
-}
-.form input::-moz-placeholder, .form select::-moz-placeholder {
-  color: var(--text);
-}
-.form input:-ms-input-placeholder, .form select:-ms-input-placeholder {
-  color: var(--text);
-}
-.form input::placeholder, .form select::placeholder {
-  color: var(--text);
-}
-
 html {
   font-size: 10px;
+}
+
+.loading {
+  min-height: 91vh;
+  background: var(--background);
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.loading p {
+  font-size: 10rem;
+  text-transform: uppercase;
 }
 
 header {
@@ -69,17 +60,26 @@ header button img {
   height: 2rem;
 }
 
-.loading {
-  min-height: 91vh;
-  background: var(--background);
-  color: var(--text);
+.form {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  gap: 2rem;
 }
-.loading p {
-  font-size: 10rem;
-  text-transform: uppercase;
+.form input, .form select {
+  box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.05);
+  font-size: 1.6rem;
+  padding: 1rem;
+  border: 0;
+  background: var(--elements);
+  color: var(--text);
+}
+.form input::-moz-placeholder, .form select::-moz-placeholder {
+  color: var(--text);
+}
+.form input:-ms-input-placeholder, .form select:-ms-input-placeholder {
+  color: var(--text);
+}
+.form input::placeholder, .form select::placeholder {
+  color: var(--text);
 }
 
 .container {

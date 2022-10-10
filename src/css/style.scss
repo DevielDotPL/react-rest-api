@@ -1,6 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap');
-
-
 .light-mode{
   --elements: white;
   --background: hsl(0, 0%, 98%);
@@ -17,23 +15,20 @@
   box-sizing: border-box;
   font-family: 'Nunito Sans', sans-serif;
 }
-.form{
-  display: flex;
-  gap: 2rem;
-  input,select{
-    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.05);
-    font-size: 1.6rem;
-    padding: 1rem;
-    border:0;
-    background: var(--elements);
-    color: var(--text);
-    &::placeholder{
-      color: var(--text);
-    }
-  }
-}
 html{
   font-size: 10px;
+}
+.loading{
+  min-height: 91vh;
+  background: var(--background);
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  p{
+    font-size: 10rem;
+    text-transform: uppercase;
+  }
 }
 header{
   display: flex;
@@ -59,16 +54,19 @@ header{
     }
   }
 }
-.loading{
-  min-height: 91vh;
-  background: var(--background);
-  color: var(--text);
+.form{
   display: flex;
-  align-items: center;
-  justify-content: center;
-  p{
-    font-size: 10rem;
-    text-transform: uppercase;
+  gap: 2rem;
+  input,select{
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.05);
+    font-size: 1.6rem;
+    padding: 1rem;
+    border:0;
+    background: var(--elements);
+    color: var(--text);
+    &::placeholder{
+      color: var(--text);
+    }
   }
 }
 .container{

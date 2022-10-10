@@ -5,7 +5,6 @@ import { Country } from "./Components/Country";
 import { Header } from "./Components/Header";
 import {
   BrowserRouter,
-  Switch,
   Routes,
   Route,
 } from "react-router-dom";
